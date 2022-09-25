@@ -2,6 +2,14 @@
 
 consume API Website with webpack, bootstrap 5, javascript
 
+## Cloning folder
+
+Get the project with gitbash
+
+```bash
+  git clone https://github.com/fannr/meal-finder.git
+```
+
 ## Deployment
 
 Download all package in folder

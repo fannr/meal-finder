@@ -3,16 +3,18 @@ import {
   getCategory,
   filterCategory,
   showResponseMessage,
+  modalElements,
+  animationCard,
 } from "./functions";
 import "./Components/Footer";
 
 const main = () => {
   const navbarMode = document.querySelector(".navbar__mode");
-  navbarMode.addEventListener("click", function (e) {
+  navbarMode.addEventListener("click", (e) => {
     e.preventDefault();
 
-    const elementIcon = this.querySelector("i");
-    const spanText = this.querySelector("span");
+    const elementIcon = navbarMode.querySelector("i");
+    const spanText = navbarMode.querySelector("span");
 
     if (elementIcon.classList.contains("bi-brightness-high-fill")) {
       toggleMode(elementIcon, spanText);
@@ -25,8 +27,8 @@ const main = () => {
 
   const dataList = document.querySelector(".datalist");
   const searchInput = document.querySelector("#inputSearch");
-  searchInput.addEventListener("keyup", async function () {
-    const valueSearch = this.value.toLowerCase();
+  searchInput.addEventListener("keyup", async () => {
+    const valueSearch = searchInput.value.toLowerCase();
     const allCategory = await getCategory();
     const categories = filterCategory(valueSearch, allCategory);
 
@@ -46,7 +48,7 @@ const main = () => {
   const rows = document.querySelector(".cards .row");
   const text = document.querySelector(".text");
   const footer = document.querySelector("footer");
-  document.addEventListener("click", async function (e) {
+  document.addEventListener("click", async (e) => {
     if (e.target.className == "list-food") {
       const categoryFood = e.target.textContent;
       const categoryListFood = await getCategory(categoryFood);
@@ -79,23 +81,9 @@ const main = () => {
         )
         .join("");
 
-      const card = document.querySelectorAll(".card-content");
-
-      for (const c of card.entries()) {
-        setTimeout(() => {
-          c[1].classList.add("active");
-        }, c[0] * 400);
-      }
+      animationCard();
     } else if (e.target.id == "details") {
       const idMeal = e.target.dataset.id;
-      const titleDetails = document.querySelector(".modal-title");
-      const images = document.querySelector(".images");
-      const linkYoutube = document.querySelector(".linkY");
-      const nameMeal = document.querySelector(".nameMeal");
-      const nameCategory = document.querySelector(".nameCategory");
-      const nameArea = document.querySelector(".nameArea");
-      const intructions = document.querySelector(".intructions");
-      const tags = document.querySelector(".tags");
 
       try {
         const response = await fetch(
@@ -103,22 +91,7 @@ const main = () => {
         );
         const responseJSON = await response.json();
         const meals = responseJSON.meals[0];
-
-        titleDetails.textContent = `Details (${meals.strMeal})`;
-        images.setAttribute("alt", `${meals.strMeal}`);
-        images.setAttribute("src", `${meals.strMealThumb}`);
-        linkYoutube.setAttribute("href", `${meals.strYoutube}`);
-        nameMeal.textContent = `${meals.strMeal}`;
-        nameCategory.textContent = `${meals.strCategory}`;
-        nameArea.textContent = `${meals.strArea}`;
-        intructions.textContent = `${meals.strInstructions}`;
-
-        const strTags = meals.strTags ? meals.strTags.split(",") : "";
-        if (strTags != "") {
-          tags.innerHTML = strTags.map(
-            (s) => `<span class="badge text-bg-dark p-2">${s}</span>`
-          );
-        }
+        modalElements(meals);
       } catch (err) {
         showResponseMessage(err);
       }
