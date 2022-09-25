@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Finder</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top shadow">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-3 text-light" href="#">MealFinder.</a>
+        <div class="navbar-nav navbar__mode">
+          <a href="#" class="nav-link text-light d-flex">
+            <i class="bi bi-brightness-high-fill"></i>
+            <span>Light</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <section class="searchContainer">
+      <div class="mb-3 content">
+        <label for="inputSearch" class="form-label">Search Food</label>
+        <input
+          type="search"
+          class="form-control"
+          id="inputSearch"
+          placeholder="Search by category food..."
+          autocomplete="off"
+        />
+        <div class="form-text my-2">
+          Example: Beef, Seafood, Breakfast, Vegetarian, ect.
+        </div>
+      </div>
+      <div class="datalist"></div>
+    </section>
+
+    <div class="container cards">
+      <div class="text">
+        <!--  -->
+      </div>
+      <div class="row justify-content-center"></div>
+    </div>
+
+    <!-- Modal -->
+    <modal-component></modal-component>
+
+    <footer-element
+      text="Copyright © Reserved & Built by Fatah Noer."
+    ></footer-element>
+  </body>
+</html>

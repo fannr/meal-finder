@@ -1,0 +1,148 @@
+.cards {
+  position: relative;
+  z-index: 2;
+  margin-top: -200px;
+  padding-bottom: 50px;
+}
+
+.card img {
+  width: 100%;
+}
+
+.cards h1 {
+  transition: 0.3s;
+}
+
+.cards h1:after {
+  content: "";
+  width: 50%;
+  height: 3px;
+  background: black;
+  display: block;
+  margin: 20px auto;
+}
+
+.card-content {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  translate: 0 -40px;
+  transition: 0.3s;
+}
+
+.card-content.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: all !important;
+  translate: 0 0px !important;
+}
+
+body.theme__mode .cards h1 {
+  color: white;
+}
+body.theme__mode .cards h1:after {
+  background-color: white;
+}
+
+.card-image {
+  position: relative;
+}
+
+.card-image p {
+  color: white;
+  text-shadow: 0 0 3px black;
+  position: absolute;
+  top: 15px;
+  font-size: 1.5rem;
+  right: 15px;
+}
+
+.card-title {
+  z-index: 2;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  text-shadow: 0px 0px 5px black;
+  font-weight: 700;
+  color: white;
+}
+
+.card-image:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+
+/* body.theme__mode .card-image:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0)
+  );
+} */
+
+.btn-primary {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 15px;
+  background: white !important;
+  border: 1px solid white !important;
+  color: black !important;
+  border-radius: 4px !important;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 10px white;
+  background: white !important;
+  color: black !important;
+}
+
+.card {
+  transition: 0.3s;
+  overflow: hidden;
+  border: none !important;
+}
+
+.card-body {
+  border-radius: 0 0 4px 4px;
+  background: rgba(0, 0, 0, 1);
+  color: white;
+  transition: 0.3s;
+}
+
+body.theme__mode .card-body {
+  background-color: white;
+  color: black;
+}
+
+body.theme__mode .btn-primary {
+  background: red !important;
+  color: white !important;
+  border: 1px solid red !important;
+  transition: 0.3s;
+}
+
+body.theme__mode .btn-primary:hover {
+  background-color: red !important;
+  box-shadow: 0 0 5px red;
+}
+
+@media (max-width: 576px) {
+  .cards {
+    padding: 0px 30px !important;
+  }
+}

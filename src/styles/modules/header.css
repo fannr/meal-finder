@@ -1,0 +1,53 @@
+.navbar {
+  background: black;
+}
+
+.navbar .navbar__mode a {
+  text-decoration: none;
+  border: 1px solid white;
+  gap: 5px;
+  transition: 0.3s;
+  padding: 0.3em 0.8em !important;
+  border-radius: 4px;
+  background: white;
+  color: black !important;
+}
+
+.navbar .navbar__mode a:hover {
+  color: white !important;
+  background: transparent;
+}
+
+body.theme__mode .navbar {
+  background: white !important;
+}
+
+body.theme__mode {
+  background: black;
+}
+
+body.theme__mode .navbar-brand {
+  color: black !important;
+}
+
+body.theme__mode .navbar__mode a {
+  border-color: black !important;
+  color: black !important;
+  background: black;
+  color: white !important;
+}
+
+body.theme__mode .navbar__mode a:hover {
+  background: transparent;
+  color: black !important;
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .navbar .navbar__mode a {
+    font-size: 0.9rem !important;
+  }
+}

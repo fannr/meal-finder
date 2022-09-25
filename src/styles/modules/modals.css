@@ -1,0 +1,26 @@
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 15px 0;
+}
+
+.group:nth-child(1) {
+  display: initial;
+}
+
+.group:nth-child(1) a {
+  font-size: 2rem;
+  color: black;
+}
+
+.modal small {
+  margin-top: -15px;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.modal p {
+  font-weight: 700;
+  font-size: 1.5rem;
+}

@@ -1,0 +1,21 @@
+@import "./modules/modals.css";
+@import "./modules/cards.css";
+@import "./modules/header.css";
+@import "./modules/search.css";
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+footer {
+  display: none;
+  transition: 0.3s;
+}
+
+body.theme__mode footer {
+  color: white;
+}
