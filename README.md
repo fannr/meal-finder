@@ -25,3 +25,10 @@ To run tests, run the following command
 ```bash
   npm run start-dev
 ```
+
+
+## Demo
+
+https://meal-finder-noerra.netlify.app/
+
+
